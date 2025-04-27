@@ -20,9 +20,10 @@
 │   │   │                       │   ├── GameSession.java
 │   │   │                       │   └── Score.java
 │   │   │                       ├── ProjectBackendApplication.java
-│   │   │                       └── repository
-│   │   │                           ├── GameSessionRepository.java
-│   │   │                           └── ScoreRepository.java
+│   │   │                       ├── repository
+│   │   │                       │   ├── GameSessionRepository.java
+│   │   │                       │   └── ScoreRepository.java
+│   │   │                       └── Tools.java
 │   │   └── resources
 │   │       ├── application.properties
 │   │       ├── static
@@ -37,4 +38,4 @@
 │                               └── ProjectBackendApplicationTests.java
 └── zadani_ukolu.txt
 
-23 directories, 15 files
+23 directories, 16 files

@@ -1,0 +1,40 @@
+.
+├── backend_project_structure.txt
+├── HELP.md
+├── mvnw
+├── mvnw.cmd
+├── pom.xml
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   └── cz
+│   │   │       └── vsb
+│   │   │           └── fei
+│   │   │               └── project
+│   │   │                   └── project_backend
+│   │   │                       ├── config
+│   │   │                       ├── controllers
+│   │   │                       │   ├── GameSessionRestController.java
+│   │   │                       │   └── ScoreRestController.java
+│   │   │                       ├── entities
+│   │   │                       │   ├── GameSession.java
+│   │   │                       │   └── Score.java
+│   │   │                       ├── ProjectBackendApplication.java
+│   │   │                       └── repository
+│   │   │                           ├── GameSessionRepository.java
+│   │   │                           └── ScoreRepository.java
+│   │   └── resources
+│   │       ├── application.properties
+│   │       ├── static
+│   │       └── templates
+│   └── test
+│       └── java
+│           └── cz
+│               └── vsb
+│                   └── fei
+│                       └── project
+│                           └── project_backend
+│                               └── ProjectBackendApplicationTests.java
+└── zadani_ukolu.txt
+
+23 directories, 15 files

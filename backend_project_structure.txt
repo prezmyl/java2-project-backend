@@ -1,6 +1,7 @@
 .
 ├── backend_project_structure.txt
 ├── HELP.md
+├── log_BE.txt
 ├── mvnw
 ├── mvnw.cmd
 ├── pom.xml
@@ -36,6 +37,41 @@
 │                       └── project
 │                           └── project_backend
 │                               └── ProjectBackendApplicationTests.java
+├── target
+│   ├── classes
+│   │   ├── application.properties
+│   │   └── cz
+│   │       └── vsb
+│   │           └── fei
+│   │               └── project
+│   │                   └── project_backend
+│   │                       ├── controllers
+│   │                       │   ├── GameSessionRestController.class
+│   │                       │   └── ScoreRestController.class
+│   │                       ├── entities
+│   │                       │   ├── GameSession.class
+│   │                       │   ├── GameSession_.class
+│   │                       │   ├── Score.class
+│   │                       │   └── Score_.class
+│   │                       ├── ProjectBackendApplication.class
+│   │                       ├── repository
+│   │                       │   ├── GameSessionRepository.class
+│   │                       │   └── ScoreRepository.class
+│   │                       └── Tools.class
+│   └── generated-sources
+│       └── annotations
+│           ├── cz
+│           │   └── vsb
+│           │       └── fei
+│           │           └── project
+│           │               └── project_backend
+│           │                   └── entities
+│           │                       ├── GameSession_.java
+│           │                       └── Score_.java
+│           └── entity
+│               └── index
+│                   ├── GameSession
+│                   └── Score
 └── zadani_ukolu.txt
 
-23 directories, 16 files
+43 directories, 32 files

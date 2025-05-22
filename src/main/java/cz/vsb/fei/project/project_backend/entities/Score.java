@@ -16,7 +16,12 @@ public class Score {
     private Long id;
 
     private int points;
-    private String nick;
+
+    @ManyToOne
+    @JoinColumn(name = "player_id")
+    @JsonBackReference
+    private Player player;
+
 
     @ManyToOne
     @JoinColumn(name = "game_session_id")

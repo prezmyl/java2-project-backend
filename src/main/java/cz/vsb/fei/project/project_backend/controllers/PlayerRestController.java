@@ -40,7 +40,7 @@ public class PlayerRestController {
         return playerRepository.save(player);
     }
 
-    @DeleteMapping("{/id}")
+    @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
         playerRepository.deleteById(id);
     }

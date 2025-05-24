@@ -16,13 +16,16 @@
 │   │   │                       ├── config
 │   │   │                       ├── controllers
 │   │   │                       │   ├── GameSessionRestController.java
+│   │   │                       │   ├── PlayerRestController.java
 │   │   │                       │   └── ScoreRestController.java
 │   │   │                       ├── entities
 │   │   │                       │   ├── GameSession.java
+│   │   │                       │   ├── Player.java
 │   │   │                       │   └── Score.java
 │   │   │                       ├── ProjectBackendApplication.java
 │   │   │                       ├── repository
 │   │   │                       │   ├── GameSessionRepository.java
+│   │   │                       │   ├── PlayerRepository.java
 │   │   │                       │   └── ScoreRepository.java
 │   │   │                       └── Tools.java
 │   │   └── resources
@@ -40,24 +43,33 @@
 ├── target
 │   ├── classes
 │   │   ├── application.properties
-│   │   └── cz
-│   │       └── vsb
-│   │           └── fei
-│   │               └── project
-│   │                   └── project_backend
-│   │                       ├── controllers
-│   │                       │   ├── GameSessionRestController.class
-│   │                       │   └── ScoreRestController.class
-│   │                       ├── entities
-│   │                       │   ├── GameSession.class
-│   │                       │   ├── GameSession_.class
-│   │                       │   ├── Score.class
-│   │                       │   └── Score_.class
-│   │                       ├── ProjectBackendApplication.class
-│   │                       ├── repository
-│   │                       │   ├── GameSessionRepository.class
-│   │                       │   └── ScoreRepository.class
-│   │                       └── Tools.class
+│   │   ├── cz
+│   │   │   └── vsb
+│   │   │       └── fei
+│   │   │           └── project
+│   │   │               └── project_backend
+│   │   │                   ├── controllers
+│   │   │                   │   ├── GameSessionRestController.class
+│   │   │                   │   ├── PlayerRestController.class
+│   │   │                   │   └── ScoreRestController.class
+│   │   │                   ├── entities
+│   │   │                   │   ├── GameSession.class
+│   │   │                   │   ├── GameSession_.class
+│   │   │                   │   ├── Player.class
+│   │   │                   │   ├── Player_.class
+│   │   │                   │   ├── Score.class
+│   │   │                   │   └── Score_.class
+│   │   │                   ├── ProjectBackendApplication.class
+│   │   │                   ├── repository
+│   │   │                   │   ├── GameSessionRepository.class
+│   │   │                   │   ├── PlayerRepository.class
+│   │   │                   │   └── ScoreRepository.class
+│   │   │                   └── Tools.class
+│   │   └── entity
+│   │       └── index
+│   │           ├── GameSession
+│   │           ├── Player
+│   │           └── Score
 │   └── generated-sources
 │       └── annotations
 │           ├── cz
@@ -67,11 +79,14 @@
 │           │               └── project_backend
 │           │                   └── entities
 │           │                       ├── GameSession_.java
+│           │                       ├── Player_.java
 │           │                       └── Score_.java
 │           └── entity
 │               └── index
 │                   ├── GameSession
+│                   ├── Player
 │                   └── Score
+├── url_gitHub_project.txt
 └── zadani_ukolu.txt
 
-43 directories, 32 files
+45 directories, 45 files

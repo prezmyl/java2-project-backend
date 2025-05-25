@@ -43,6 +43,8 @@ public class PlayerRestController {
         response.setNickname(player.getNickname());
         response.setFirstName(player.getFirstName());
         response.setLastName(player.getLastName());
+        System.out.println("BE returning: " + response);
+
         return response;
     }
 

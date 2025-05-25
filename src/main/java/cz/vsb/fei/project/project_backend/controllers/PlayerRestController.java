@@ -34,10 +34,10 @@ public class PlayerRestController {
         player.setFirstName(dto.getFirstName());
         player.setLastName(dto.getLastName());
 
-        // Ulož hráče a tím získáš id
+        // Ulozim hrace a ziskam id
         player = playerRepository.save(player);
 
-        // Sestav DTO pro FE s id
+        // Sestavi DTO pro FE s id
         PlayerDTO response = new PlayerDTO();
         response.setId(player.getId());
         response.setNickname(player.getNickname());

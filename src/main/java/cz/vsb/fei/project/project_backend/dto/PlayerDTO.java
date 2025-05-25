@@ -1,19 +1,17 @@
 package cz.vsb.fei.project.project_backend.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class PlayerDTO {
     private Long id;
     private String nickname;
 
-    // Když potřebuješ (volitelné)
+    // rozsiteni pripadna
     private String firstName;
     private String lastName;
 

@@ -27,7 +27,7 @@ public class GameSessionRestController {
         GameSession session = new GameSession();
         session.setGameName(dto.getGameName());
 
-        // Ulož session a tím získáš id
+        // ulloz session a tím ziskam id
         session = gameSessionRepository.save(session);
 
         // Sestav DTO pro FE s id

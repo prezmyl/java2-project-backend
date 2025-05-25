@@ -3,6 +3,7 @@ package cz.vsb.fei.project.project_backend.controllers;
 import cz.vsb.fei.project.project_backend.dto.ScoreDTO;
 import cz.vsb.fei.project.project_backend.service.ScoreService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,5 +23,11 @@ public class ScoreRestController {
     public ScoreDTO createScore(@RequestBody ScoreDTO scoreDTO) {
         //System.out.println("↪ Received ScoreDTO: " + scoreDTO);
         return scoreService.createScore(scoreDTO);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
+        scoreService.deleteScore(id);
+        return ResponseEntity.noContent().build();
     }
 }

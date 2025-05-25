@@ -58,6 +58,10 @@
 │   │   │                   │   ├── GameSessionRestController.class
 │   │   │                   │   ├── PlayerRestController.class
 │   │   │                   │   └── ScoreRestController.class
+│   │   │                   ├── dto
+│   │   │                   │   ├── GameSessionDTO.class
+│   │   │                   │   ├── PlayerDTO.class
+│   │   │                   │   └── ScoreDTO.class
 │   │   │                   ├── entities
 │   │   │                   │   ├── GameSession.class
 │   │   │                   │   ├── GameSession_.class
@@ -70,29 +74,57 @@
 │   │   │                   │   ├── GameSessionRepository.class
 │   │   │                   │   ├── PlayerRepository.class
 │   │   │                   │   └── ScoreRepository.class
+│   │   │                   ├── service
+│   │   │                   │   └── ScoreService.class
 │   │   │                   └── Tools.class
 │   │   └── entity
 │   │       └── index
 │   │           ├── GameSession
 │   │           ├── Player
 │   │           └── Score
-│   └── generated-sources
-│       └── annotations
-│           ├── cz
-│           │   └── vsb
-│           │       └── fei
-│           │           └── project
-│           │               └── project_backend
-│           │                   └── entities
-│           │                       ├── GameSession_.java
-│           │                       ├── Player_.java
-│           │                       └── Score_.java
-│           └── entity
-│               └── index
-│                   ├── GameSession
-│                   ├── Player
-│                   └── Score
+│   ├── generated-sources
+│   │   └── annotations
+│   │       ├── cz
+│   │       │   └── vsb
+│   │       │       └── fei
+│   │       │           └── project
+│   │       │               └── project_backend
+│   │       │                   └── entities
+│   │       │                       ├── GameSession_.java
+│   │       │                       ├── Player_.java
+│   │       │                       └── Score_.java
+│   │       └── entity
+│   │           └── index
+│   │               ├── GameSession
+│   │               ├── Player
+│   │               └── Score
+│   ├── generated-test-sources
+│   │   └── test-annotations
+│   ├── maven-archiver
+│   │   └── pom.properties
+│   ├── maven-status
+│   │   └── maven-compiler-plugin
+│   │       ├── compile
+│   │       │   └── default-compile
+│   │       │       ├── createdFiles.lst
+│   │       │       └── inputFiles.lst
+│   │       └── testCompile
+│   │           └── default-testCompile
+│   │               ├── createdFiles.lst
+│   │               └── inputFiles.lst
+│   ├── project-backend-0.0.1-SNAPSHOT.jar
+│   ├── project-backend-0.0.1-SNAPSHOT.jar.original
+│   ├── surefire-reports
+│   │   ├── cz.vsb.fei.project.project_backend.ProjectBackendApplicationTests.txt
+│   │   └── TEST-cz.vsb.fei.project.project_backend.ProjectBackendApplicationTests.xml
+│   └── test-classes
+│       └── cz
+│           └── vsb
+│               └── fei
+│                   └── project
+│                       └── project_backend
+│                           └── ProjectBackendApplicationTests.class
 ├── url_gitHub_project.txt
 └── zadani_ukolu.txt
 
-47 directories, 49 files
+65 directories, 63 files

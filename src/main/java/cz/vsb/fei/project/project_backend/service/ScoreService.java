@@ -54,7 +54,7 @@ public class ScoreService {
         response.setPlayerNickname(player.getNickname());
         response.setGameSessionId(session.getId());
         response.setGameSessionName(session.getGameName());
-        System.out.println("↪ Created ScoreDTO: " + response);
+       // System.out.println("↪ Created ScoreDTO: " + response);
 
         return response;
     }
@@ -75,5 +75,9 @@ public class ScoreService {
             dto.setGameSessionName(score.getGameSession().getGameName());
         }
         return dto;
+    }
+
+    public void deleteScore(Long id) {
+        scoreRepository.deleteById(id);
     }
 }

@@ -3,8 +3,10 @@ package cz.vsb.fei.project.project_backend.controllers;
 import cz.vsb.fei.project.project_backend.dto.GameSessionDTO;
 import cz.vsb.fei.project.project_backend.entities.GameSession;
 import cz.vsb.fei.project.project_backend.repository.GameSessionRepository;
+import cz.vsb.fei.project.project_backend.service.GameSessionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,46 +17,34 @@ import java.util.List;
 public class GameSessionRestController {
 
     @Autowired
-    private final GameSessionRepository gameSessionRepository;
-
-    @GetMapping
-    public List<GameSession> getAllGameSessions() {
-        return gameSessionRepository.findAll();
-    }
+    private GameSessionService gameSessionService;
 
     @PostMapping
-    public GameSessionDTO createGameSession(@RequestBody GameSessionDTO dto) {
-        GameSession session = new GameSession();
-        session.setGameName(dto.getGameName());
-
-        // ulloz session a tím ziskam id
-        session = gameSessionRepository.save(session);
-
-        // Sestav DTO pro FE s id
-        GameSessionDTO response = new GameSessionDTO();
-        response.setId(session.getId());
-        response.setGameName(session.getGameName());
-        return response;
+    public GameSessionDTO create(@RequestBody GameSessionDTO dto) {
+        return gameSessionService.createGameSession(dto);
     }
 
-    // GET /api/game-sessions/{id}
     @GetMapping("/{id}")
-    public GameSession getSessionById(@PathVariable Long id) {
-        return gameSessionRepository.findById(id).orElseThrow();
+    public ResponseEntity<GameSessionDTO> get(@PathVariable Long id) {
+        return gameSessionService.getGameSession(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
     }
 
-    // PUT /api/game-sessions/{id}
+    @GetMapping
+    public List<GameSessionDTO> getAll() {
+        return gameSessionService.getAllGameSessions();
+    }
+
     @PutMapping("/{id}")
-    public GameSession updateSession(@PathVariable Long id, @RequestBody GameSession updatedSession) {
-        GameSession session = gameSessionRepository.findById(id).orElseThrow();
-        session.setGameName(updatedSession.getGameName());
-        return gameSessionRepository.save(session);
+    public GameSessionDTO update(@PathVariable Long id, @RequestBody GameSessionDTO dto) {
+        return gameSessionService.updateGameSession(id, dto);
     }
 
-    // DELETE /api/game-sessions/{id}
     @DeleteMapping("/{id}")
-    public void deleteSession(@PathVariable Long id) {
-        gameSessionRepository.deleteById(id);
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
+        gameSessionService.deleteGameSession(id);
+        return ResponseEntity.noContent().build();
     }
 
 }

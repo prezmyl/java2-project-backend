@@ -1,5 +1,6 @@
 package cz.vsb.fei.project.project_backend.service;
 
+import cz.vsb.fei.project.project_backend.Tools;
 import cz.vsb.fei.project.project_backend.dto.PlayerDTO;
 import cz.vsb.fei.project.project_backend.entities.Player;
 import cz.vsb.fei.project.project_backend.repository.PlayerRepository;
@@ -17,9 +18,17 @@ public class PlayerService {
 
     public PlayerDTO createPlayer(PlayerDTO dto) {
         Player player = new Player();
-        player.setNickname(dto.getNickname());
-        player.setFirstName(dto.getFirstName());
-        player.setLastName(dto.getLastName());
+        player.setNickname(dto.getNickname() != null && !dto.getNickname().isBlank()
+                ? dto.getNickname()
+                : Tools.randomNick());
+
+        player.setFirstName(dto.getFirstName() != null && !dto.getFirstName().isBlank()
+                ? dto.getFirstName()
+                : Tools.randomFistName());
+
+        player.setLastName(dto.getLastName() != null && !dto.getLastName().isBlank()
+                ? dto.getLastName()
+                : Tools.randomLastName());
         player = playerRepository.save(player);
         return mapToDTO(player);
     }
@@ -48,9 +57,20 @@ public class PlayerService {
     public PlayerDTO updatePlayer(Long id, PlayerDTO dto) {
         Player player = playerRepository.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("Player not found"));
-        player.setNickname(dto.getNickname());
-        player.setFirstName(dto.getFirstName());
-        player.setLastName(dto.getLastName());
+
+        // Dummy data, pokud pole nene vypneno z FE
+        player.setNickname(dto.getNickname() != null && !dto.getNickname().isBlank()
+                ? dto.getNickname()
+                : Tools.randomNick());
+
+        player.setFirstName(dto.getFirstName() != null && !dto.getFirstName().isBlank()
+                ? dto.getFirstName()
+                : Tools.randomFistName());
+
+        player.setLastName(dto.getLastName() != null && !dto.getLastName().isBlank()
+                ? dto.getLastName()
+                : Tools.randomLastName());
+
         player = playerRepository.save(player);
         return mapToDTO(player);
     }

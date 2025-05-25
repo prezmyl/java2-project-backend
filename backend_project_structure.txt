@@ -32,6 +32,8 @@
 │   │   │                       │   ├── PlayerRepository.java
 │   │   │                       │   └── ScoreRepository.java
 │   │   │                       ├── service
+│   │   │                       │   ├── GameSessionService.java
+│   │   │                       │   ├── PlayerService.java
 │   │   │                       │   └── ScoreService.java
 │   │   │                       └── Tools.java
 │   │   └── resources
@@ -75,6 +77,8 @@
 │   │   │                   │   ├── PlayerRepository.class
 │   │   │                   │   └── ScoreRepository.class
 │   │   │                   ├── service
+│   │   │                   │   ├── GameSessionService.class
+│   │   │                   │   ├── PlayerService.class
 │   │   │                   │   └── ScoreService.class
 │   │   │                   └── Tools.class
 │   │   └── entity
@@ -127,4 +131,4 @@
 ├── url_gitHub_project.txt
 └── zadani_ukolu.txt
 
-65 directories, 63 files
+65 directories, 67 files

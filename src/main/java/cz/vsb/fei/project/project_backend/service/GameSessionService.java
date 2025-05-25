@@ -5,6 +5,7 @@ import cz.vsb.fei.project.project_backend.entities.GameSession;
 import cz.vsb.fei.project.project_backend.repository.GameSessionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import cz.vsb.fei.project.project_backend.Tools;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -17,7 +18,10 @@ public class GameSessionService {
 
     public GameSessionDTO createGameSession(GameSessionDTO dto) {
         GameSession session = new GameSession();
-        session.setGameName(dto.getGameName());
+        session.setGameName(dto.getGameName() != null && !dto.getGameName().isBlank()
+                ? dto.getGameName()
+                : Tools.randomGameName());
+
         session = gameSessionRepository.save(session);
         return mapToDTO(session);
     }

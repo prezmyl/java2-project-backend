@@ -1,5 +1,6 @@
 package cz.vsb.fei.project.project_backend.controllers;
 
+import cz.vsb.fei.project.project_backend.dto.PlayerDTO;
 import cz.vsb.fei.project.project_backend.entities.Player;
 import cz.vsb.fei.project.project_backend.repository.PlayerRepository;
 import lombok.RequiredArgsConstructor;
@@ -27,8 +28,22 @@ public class PlayerRestController {
     }
 
     @PostMapping
-    public Player create(@RequestBody Player player) {
-        return playerRepository.save(player);
+    public PlayerDTO create(@RequestBody PlayerDTO dto) {
+        Player player = new Player();
+        player.setNickname(dto.getNickname());
+        player.setFirstName(dto.getFirstName());
+        player.setLastName(dto.getLastName());
+
+        // Ulož hráče a tím získáš id
+        player = playerRepository.save(player);
+
+        // Sestav DTO pro FE s id
+        PlayerDTO response = new PlayerDTO();
+        response.setId(player.getId());
+        response.setNickname(player.getNickname());
+        response.setFirstName(player.getFirstName());
+        response.setLastName(player.getLastName());
+        return response;
     }
 
     @PutMapping("/{id}")

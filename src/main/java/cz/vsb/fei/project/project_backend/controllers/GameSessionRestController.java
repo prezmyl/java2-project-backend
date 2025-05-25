@@ -1,5 +1,6 @@
 package cz.vsb.fei.project.project_backend.controllers;
 
+import cz.vsb.fei.project.project_backend.dto.GameSessionDTO;
 import cz.vsb.fei.project.project_backend.entities.GameSession;
 import cz.vsb.fei.project.project_backend.repository.GameSessionRepository;
 import lombok.RequiredArgsConstructor;
@@ -22,8 +23,18 @@ public class GameSessionRestController {
     }
 
     @PostMapping
-    public GameSession createGameSession(@RequestBody GameSession gameSession) {
-        return gameSessionRepository.save(gameSession);
+    public GameSessionDTO createGameSession(@RequestBody GameSessionDTO dto) {
+        GameSession session = new GameSession();
+        session.setGameName(dto.getGameName());
+
+        // Ulož session a tím získáš id
+        session = gameSessionRepository.save(session);
+
+        // Sestav DTO pro FE s id
+        GameSessionDTO response = new GameSessionDTO();
+        response.setId(session.getId());
+        response.setGameName(session.getGameName());
+        return response;
     }
 
     // GET /api/game-sessions/{id}

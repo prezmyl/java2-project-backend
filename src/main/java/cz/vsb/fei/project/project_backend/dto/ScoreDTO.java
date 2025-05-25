@@ -1,5 +1,15 @@
 package cz.vsb.fei.project.project_backend.dto;
 
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class ScoreDTO {
     private Long id;
     private int points;
@@ -8,22 +18,18 @@ public class ScoreDTO {
     private Long gameSessionId;
     private String gameSessionName;
 
-    // Gettery & settery
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
+    @Override
+    public String toString() {
+        return "ScoreDTO{" +
+                "id=" + id +
+                ", points=" + points +
+                ", playerId=" + playerId +
+                ", gameSessionId=" + gameSessionId +
+                ", playerNickname='" + playerNickname + '\'' +
+                ", gameSessionName='" + gameSessionName + '\'' +
+                '}';
+    }
 
-    public int getPoints() { return points; }
-    public void setPoints(int points) { this.points = points; }
 
-    public Long getPlayerId() { return playerId; }
-    public void setPlayerId(Long playerId) { this.playerId = playerId; }
 
-    public String getPlayerNickname() { return playerNickname; }
-    public void setPlayerNickname(String playerNickname) { this.playerNickname = playerNickname; }
-
-    public Long getGameSessionId() { return gameSessionId; }
-    public void setGameSessionId(Long gameSessionId) { this.gameSessionId = gameSessionId; }
-
-    public String getGameSessionName() { return gameSessionName; }
-    public void setGameSessionName(String gameSessionName) { this.gameSessionName = gameSessionName; }
 }

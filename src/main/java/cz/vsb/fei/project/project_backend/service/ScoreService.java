@@ -20,32 +20,46 @@ public class ScoreService {
     @Autowired
     private PlayerRepository playerRepository;
     @Autowired
-    private GameSessionRepository sessionRepository;
+    private GameSessionRepository gameSessionRepository;
 
-    // Vrací všechny score jako DTO
+    // Vraci vsechny score jako DTO
     public List<ScoreDTO> getAllScores() {
         return scoreRepository.findAll().stream()
                 .map(this::toDto)
                 .collect(Collectors.toList());
     }
 
-    // Přidání nového skóre
+
     public ScoreDTO createScore(ScoreDTO dto) {
+        // Najdi player a session podle id
         Player player = playerRepository.findById(dto.getPlayerId())
                 .orElseThrow(() -> new IllegalArgumentException("Player not found"));
-        GameSession session = sessionRepository.findById(dto.getGameSessionId())
+        GameSession session = gameSessionRepository.findById(dto.getGameSessionId())
                 .orElseThrow(() -> new IllegalArgumentException("Session not found"));
 
+        // Vytvorr novou entitu
         Score score = new Score();
         score.setPoints(dto.getPoints());
         score.setPlayer(player);
         score.setGameSession(session);
 
-        Score saved = scoreRepository.save(score);
-        return toDto(saved);
+        // Uloz do DB a ziskej id
+        score = scoreRepository.save(score);
+
+        // Sestav DTO pro FE s id a dalsimi poli
+        ScoreDTO response = new ScoreDTO();
+        response.setId(score.getId());
+        response.setPoints(score.getPoints());
+        response.setPlayerId(player.getId());
+        response.setPlayerNickname(player.getNickname());
+        response.setGameSessionId(session.getId());
+        response.setGameSessionName(session.getGameName());
+        System.out.println("↪ Created ScoreDTO: " + response);
+
+        return response;
     }
 
-    // Mapování entity -> DTO
+    // Mapovani entity -> DTO
     private ScoreDTO toDto(Score score) {
         ScoreDTO dto = new ScoreDTO();
         dto.setId(score.getId());

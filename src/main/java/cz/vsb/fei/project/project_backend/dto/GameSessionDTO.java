@@ -1,8 +1,17 @@
 package cz.vsb.fei.project.project_backend.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.time.LocalDateTime;
 import java.util.List;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class GameSessionDTO {
     private Long id;
     private String gameName;
@@ -11,16 +20,5 @@ public class GameSessionDTO {
     // Pokud chceš mít detailní výpis skóre k session (ne nutné pro všechno)
     private List<ScoreDTO> scores;
 
-    // Getters & Setters
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
 
-    public String getGameName() { return gameName; }
-    public void setGameName(String gameName) { this.gameName = gameName; }
-
-    public LocalDateTime getDate() { return date; }
-    public void setDate(LocalDateTime date) { this.date = date; }
-
-    public List<ScoreDTO> getScores() { return scores; }
-    public void setScores(List<ScoreDTO> scores) { this.scores = scores; }
 }

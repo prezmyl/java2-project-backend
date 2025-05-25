@@ -18,6 +18,10 @@
 │   │   │                       │   ├── GameSessionRestController.java
 │   │   │                       │   ├── PlayerRestController.java
 │   │   │                       │   └── ScoreRestController.java
+│   │   │                       ├── dto
+│   │   │                       │   ├── GameSessionDTO.java
+│   │   │                       │   ├── PlayerDTO.java
+│   │   │                       │   └── ScoreDTO.java
 │   │   │                       ├── entities
 │   │   │                       │   ├── GameSession.java
 │   │   │                       │   ├── Player.java
@@ -27,6 +31,8 @@
 │   │   │                       │   ├── GameSessionRepository.java
 │   │   │                       │   ├── PlayerRepository.java
 │   │   │                       │   └── ScoreRepository.java
+│   │   │                       ├── service
+│   │   │                       │   └── ScoreService.java
 │   │   │                       └── Tools.java
 │   │   └── resources
 │   │       ├── application.properties
@@ -89,4 +95,4 @@
 ├── url_gitHub_project.txt
 └── zadani_ukolu.txt
 
-45 directories, 45 files
+47 directories, 49 files

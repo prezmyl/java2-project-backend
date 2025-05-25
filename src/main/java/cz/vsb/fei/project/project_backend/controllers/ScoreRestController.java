@@ -20,6 +20,7 @@ public class ScoreRestController {
 
     @PostMapping
     public ScoreDTO createScore(@RequestBody ScoreDTO scoreDTO) {
+        System.out.println("↪ Received ScoreDTO: " + scoreDTO);
         return scoreService.createScore(scoreDTO);
     }
 }
